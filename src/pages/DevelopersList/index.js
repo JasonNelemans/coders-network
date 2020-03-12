@@ -21,6 +21,7 @@ export default function DevelopersList() {
                   name={developer.name} 
                   key={developer.id}
                   github={developer.github_username}
+                  id={developer.id}
                 />;
       })}
     </Container>

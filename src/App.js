@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import DevelopersList from "./pages/DevelopersList";
 import PostDetails from "./pages/PostDetails";
+import DeveloperDetails from './pages/DeveloperDetails';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/posts" component={PostsList} />
         <Route path="/posts/:id" component={PostDetails} />
-        <Route path="/developers" component={DevelopersList} />
+        <Route exact path="/developers" component={DevelopersList} />
+        <Route path="/developers/:id" component={DeveloperDetails} />
       </Switch>
     </div>
   );
