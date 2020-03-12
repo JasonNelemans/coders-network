@@ -27,6 +27,7 @@ export default function PostsList() {
         return <Post 
           title={post.title} 
           key={post.id}
+          id={post.id}
         />;
       })}
       <Button onClick={handleClick}>I want to read more posts</Button>
