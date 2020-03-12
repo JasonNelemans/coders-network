@@ -4,6 +4,7 @@ import PostsList from "./pages/PostsList";
 import Home from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import DevelopersList from "./pages/DevelopersList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/posts" component={PostsList} />
+        <Route path="/developers" component={DevelopersList} />
       </Switch>
     </div>
   );

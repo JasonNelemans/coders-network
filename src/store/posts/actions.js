@@ -45,12 +45,17 @@ function fetchPostsSucces(data) {
 
 export function fetchPostsThunk() {
   return async function(dispatch, getState) {
-    const response = await axios.get(
-      "https://codaisseur-coders-network.herokuapp.com/posts"
-    );
+    const state = getState();
+    const postCount = state.posts.rows.length;
+    const limit = 3;
 
-    console.log(response);
+    const response = await axios.get(
+      `https://codaisseur-coders-network.herokuapp.com/posts?offset=${postCount}&limit=${limit}`
+    );
+    // if(state.posts.rows.length !== 0) return;
+    
     const action = fetchPostsSucces(response.data);
     dispatch(action);
+
   };
 }
