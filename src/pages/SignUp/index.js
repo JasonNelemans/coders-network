@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { signUpThunk } from "../../store/user/actions";
-import { useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { selectToken } from "../../store/user/selectors";
+import { useHistory } from "react-router-dom";
 
 
 export default function SignUp() {
@@ -12,6 +13,14 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
+  const token = useSelector(selectToken);
+
+  useEffect(() => {
+    if (token !== null) {
+      history.push("/posts");
+    }
+  }, [token, history]);
 
   function submitForm(event) {
     event.preventDefault();
