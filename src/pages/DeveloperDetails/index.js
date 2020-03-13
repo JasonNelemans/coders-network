@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchDeveloperById } from "../../store/developerDetails/actions";
 import { selectDeveloperDetails } from "../../store/developerDetails/selectors";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import ListGroup from "react-bootstrap/ListGroup";
 

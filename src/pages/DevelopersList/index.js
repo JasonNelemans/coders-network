@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectDevelopers} from '../../store/developers/selectors';
 import Container from "react-bootstrap/Container";
 import Developer from '../../components/Developer';
+import Button from 'react-bootstrap/Button'
 
 export default function DevelopersList() {
   const dispatch = useDispatch();
@@ -14,6 +15,10 @@ export default function DevelopersList() {
   }, 
   [dispatch])
   
+  const handleClick = () => {
+    dispatch(fetchDevelopersThunk());
+  } 
+
   return (
     <Container>
       {developers.map(developer => {
@@ -24,6 +29,7 @@ export default function DevelopersList() {
                   id={developer.id}
                 />;
       })}
+      <Button onClick={handleClick}>Load more developers</Button>
     </Container>
   );
 }
