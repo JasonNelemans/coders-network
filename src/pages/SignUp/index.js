@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import { signUpThunk } from "../../store/user/actions";
+import { useDispatch } from "react-redux";
+
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const dispatch = useDispatch();
 
   function submitForm(event) {
     event.preventDefault();
-    console.log(email, password, name);
+    dispatch(signUpThunk(name, password, email));
 
     setEmail("");
     setPassword("");
