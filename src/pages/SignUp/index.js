@@ -6,6 +6,7 @@ import { signUpThunk } from "../../store/user/actions";
 import { useDispatch } from "react-redux";
 
 
+
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

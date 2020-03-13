@@ -2,8 +2,12 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
+import { selectToken } from "../store/user/selectors";
+import { useSelector } from "react-redux";
 
 export default function Navigation() {
+  const token = useSelector(selectToken);
+  
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">
@@ -21,9 +25,9 @@ export default function Navigation() {
           <Nav.Link as={NavLink} to="/developers">
             Developers
           </Nav.Link>
-          <Nav.Link as={NavLink} to="/signup">
+          {token === null ? <Nav.Link as={NavLink} to="/signup">
             Sign up
-          </Nav.Link>
+          </Nav.Link> : null}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
