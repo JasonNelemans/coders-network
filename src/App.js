@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import DevelopersList from "./pages/DevelopersList";
 import PostDetails from "./pages/PostDetails";
 import DeveloperDetails from './pages/DeveloperDetails';
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/posts/:id" component={PostDetails} />
         <Route exact path="/developers" component={DevelopersList} />
         <Route path="/developers/:id" component={DeveloperDetails} />
+        <Route path="/signup" component={SignUp} />
       </Switch>
     </div>
   );

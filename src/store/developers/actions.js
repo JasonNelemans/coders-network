@@ -9,7 +9,7 @@ export function fetchDevelopersThunk() {
     const state = getState();
     const limit = 1;
     const stateCount = state.developers.rows.length
-    
+
     const response = await axios.get(
       `https://codaisseur-coders-network.herokuapp.com/developers?offset=${stateCount}&limit=${limit}`
     );

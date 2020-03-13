@@ -21,6 +21,9 @@ export default function Navigation() {
           <Nav.Link as={NavLink} to="/developers">
             Developers
           </Nav.Link>
+          <Nav.Link as={NavLink} to="/signup">
+            Sign up
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
